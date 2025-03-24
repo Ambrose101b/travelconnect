@@ -1,14 +1,56 @@
-# Mh Ticket Booking System
-* The project is aimed to make a Online Ticket Booking Portal that can any Citizen use to book tickets [Both Train and Bus] online and their data can be maintain computerized on AWS Server.
-* This system can be used for Ticket Booking.
+# 🛫 TravelConnect - Your Ultimate Travel Companion 🌍
+
+## **Overview**
+TravelConnect is a web-based travel management system designed to help users book tickets, plan their journeys, and manage their itineraries efficiently. With a user-friendly interface and secure booking system, TravelConnect simplifies travel planning like never before!
+
+## **Features**
+✅ **User Authentication** – Secure login and registration system  
+✅ **Flight & Train Booking** – Search and book tickets easily  
+✅ **Itinerary Management** – Organize and manage trips effortlessly  
+✅ **Payment Integration** – Secure payment gateway for hassle-free transactions  
+✅ **Admin Dashboard** – Manage bookings, users, and reports  
+✅ **Responsive UI** – Mobile-friendly and easy to navigate  
+
+## **Installation & Setup**
+### **Prerequisites**
+- XAMPP (or any local PHP server)  
+- MySQL Database  
+- Git  
+- PHP 7+  
+
+### **Steps to Install**
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Ambrose101b/travelconnect.git
+
+2. Move the project to the XAMPP htdocs folder:
+   mv travelconnect C:/xampp/htdocs/
+
+3. Start Apache and MySQL from XAMPP Control Panel.
+
+4. Import the database:
+Open phpMyAdmin (http://localhost/phpmyadmin/)
+Create a new database travelconnect
+Import travelconnect.sql (provided in the project)
+
+5. Configure the database in config.php:
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "travelconnect";
+
+6.Run the project:
+   Open your browser and go to:
 
 ## TECH/FRAMEWORK USED:
-* HTML
-* CSS
-* Javascript
-* PHP
-* Xampp Server
-* MySQL
+Frontend: HTML, CSS, JavaScript.
+Backend: PHP, MySQL
+Database: MySQL
+Version Control: Git, GitHub
+Xampp Server
+
+License
+This project is open-source and available under the MIT License.
 
 ## This are some Outputs of the Project:
 
