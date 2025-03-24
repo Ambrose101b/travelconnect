@@ -7,7 +7,6 @@ TravelConnect is a web-based travel management system designed to help users boo
 ✅ **User Authentication** – Secure login and registration system  
 ✅ **Flight & Train Booking** – Search and book tickets easily  
 ✅ **Itinerary Management** – Organize and manage trips effortlessly  
-✅ **Payment Integration** – Secure payment gateway for hassle-free transactions  
 ✅ **Admin Dashboard** – Manage bookings, users, and reports  
 ✅ **Responsive UI** – Mobile-friendly and easy to navigate  
 
