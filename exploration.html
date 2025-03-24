@@ -1,0 +1,238 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title>Exploration</title>
+  <style>
+    /* CSS code goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .parallax-container {
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .parallax-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      font-size: 24px;
+      
+    }
+
+    .parallax-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .parallax-section:nth-child(odd) {
+      background-color: #333333;
+    }
+
+    .parallax-section:nth-child(even) {
+      background-color: #555555;
+    }
+
+    .parallax-section-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    .parallax-section:nth-child(2n) .parallax-section-content {
+      transform: translateY(50%);
+    }
+
+    .parallax-section:nth-child(2n+1) .parallax-section-content {
+      transform: translateY(-50%);
+    }
+  
+    .h1{
+      font-size: 30px;
+      color: #6350C4;
+            background-color: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+    }
+
+    /* Additional styles from the first code snippet */
+    .first-character {
+      font-size: 36px;
+      color: #ffffff;
+    }
+
+    .sc {
+      font-weight: bold;
+    }
+
+    .ny {
+      font-style: italic;
+    }
+
+    .line-break {
+      width: 100%;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .margin-top-10 {
+      margin-top: 10px;
+    }
+
+    .parallax-section-content:hover {
+      color: #93f8fa; /* Text color when hovered */
+    }
+
+    .parallax-section-content:not(:hover) {
+      color: #ffffff; /* Reset text color when not hovered */
+    }
+
+    /* Additional styles for the circular button */
+    .home-button {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    
+    .home-button:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    
+    .home-button-icon {
+      color: #6350C4;
+      font-size: 36px;
+    }
+    
+    .home-button-text {
+      color: #6350C4;
+      font-size: 14px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .home-button:hover .home-button-text {
+      opacity: 1;
+    }
+
+    /* Updated styles for the navigation menu */
+    nav {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #6350C4;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background-color: #6350C4;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+   <div class="parallax-section" style="background-image: url('delhi.jpg');">
+  <div class="parallax-section-content">
+<div class="h1">
+      <h1>Travel Connect</h1>
+</div>
+</br>
+<nav>
+      <ul>
+        <li><a href="http://localhost/phpscript/updated_dashboard.html">Home</a></li>
+        <li><a href="http://localhost/phpscript/exploration.html"  class="active">Explore</a></li>
+        <li><a href="http://localhost/phpscript/myticket.html">My Ticket</a></li>
+        <li><a href="http://localhost/phpscript/refundedticket.html">Refunded Tickets</a></li>
+        <li><a href="http://localhost/phpscript/offers.html">Offers</a></li>
+        <li><a href="http://localhost/phpscript/help.html">Help</a></li>
+        <li><a href="http://localhost/phpscript/aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+
+    <h2>Delhi - The Dilwali city</h2>
+    <p>Everything is 'King-size' in this city! The 'Dilwalon-ki-Dilli' doesn't believe in mediocrity. Look anywhere, the roads, the buildings, the monuments, the malls, the Metro and bus network, and even the abundance of eating options. Explore this beautiful city of India, Delhi and there is always something more and exciting to discover!.</p>
+  </div>
+</div>
+
+<div class="parallax-section" style="background-image: url('bangalore.jpg');">
+  <div class="parallax-section-content">
+<h2>Bangalore - The Garden City of India</h2>
+    <p>Greenery is the hallmark of this tech-city. Look around and you’ll find a riot of red-orange and lavender blossoms. Lest you get fooled into believing Bangalore to be a sleepy foliage-lined haven, just take a walk down Brigade road or M G Road to soak in the vibrantly pulsating youthful city!</p> 
+  </div>
+</div>
+
+<div class="parallax-section" style="background-image: url('mumbai.jpg');">
+  <div class="parallax-section-content">
+    <h2>Mumbai - The City of Dreams</h2>
+    <p>Maximum City, Mumbai: where every Indian comes with dreams in his eyes and goes back with rich memories of different hues! The financial capital of India, Mumbai has still retained its Victorian charm as well as its intense regional flavor and is a must on our list of beautiful cities in India. And not to forget the majestic queen's necklace to add charm to the shores of the island city.</p>
+  </div>
+</div>
+
+<div class="parallax-section" style="background-image: url('chennai.jpg');">
+  <div class="parallax-section-content">
+    <h2>Chennai - The Detroit Of India</h2>
+    <p>The capital city of Tamil Nadu, Chennai is the fourth largest city in India. It is a huge metropolis located on the coast of the vast Bay of Bengal. Owing to its vast coast, the city boasts of some of the best beaches in India and amazing views of the sea. While the weather may remain a bit too temperate, the city is lovely for its dwellers and tourists too.</p>
+  </div>
+</div>
+
+<div class="parallax-section" style="background-image: url('kolkata.jpg');">
+  <div class="parallax-section-content">
+    <h2>Kolkata - The City of Joy</h2>
+    <p>Be it the busy Howrah Bridge on the Hoogli or the majestic Victoria memorial, the serene Belur Math, or the supremely energizing Dakshineshwar temple, Kolkata is bound to mesmerize you. Truly a City of Joy, it's a beautiful city in India with equally beautiful people and food to match!</p>
+  </div>
+</div>
+
+<div class="parallax-section" style="background-image: url('hyderabad.jpg');">
+  <div class="parallax-section-content">
+    <h2>Hyderabad - City of Pearls</h2>
+    <p>Number 7 on our list of most beautiful cities of India is the classic tribute to the Nizami culture that existed in India - Hyderabad. The city boasts of numerous palaces, mosques, tombs, the attire, and cuisine. Standing alongside this old world charm is, Cyberabad which is the epitome of modernism with swish malls, chic showrooms, and "happening" restaurants and pubs.</p>
+  </div>
+</div>
+
+  <script>
+    // Optional: Add JavaScript code for parallax scrolling effect if desired
+  </script>
+</body>
+</html>

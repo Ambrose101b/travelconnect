@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+  <title>Dashboard</title>
+  <style>
+    /* CSS styles here */
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- HTML content here -->
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="profile-pic" class="profile-pic" src="" alt="Profile Picture">
+      <p id="user-name" class="user-name"></p>
+      <p id="user-email" class="user-email"></p>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Code for showing the profile modal
+      var profileModal = $("#modal");
+      var profileTrigger = $("#view-profile-button");
+      var profileClose = profileModal.find(".modal-close");
+
+      profileTrigger.on("click", function() {
+        fetchUserDetails()
+          .then(function(user) {
+            // Update the modal with user details
+            profileModal.find("#profile-pic").attr("src", user.profilePic);
+            profileModal.find("#user-name").text(user.name);
+            profileModal.find("#user-email").text(user.email);
+
+            // Show the modal
+            profileModal.css("display", "block");
+          })
+          .catch(function(error) {
+            console.error("Failed to fetch user details:", error);
+          });
+      });
+
+      profileClose.on("click", function() {
+        profileModal.css("display", "none");
+      });
+    });
+
+    // Function to fetch user details
+    function fetchUserDetails() {
+      return new Promise(function(resolve, reject) {
+        $.ajax({
+          url: "login.php", // Replace with the appropriate URL to fetch user details
+          method: "GET",
+          success: function(response) {
+            var user = JSON.parse(response); // Assuming the response is in JSON format
+            resolve(user);
+          },
+          error: function(xhr, status, error) {
+            reject(error);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

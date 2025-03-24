@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Icons</title>
+  <style>
+    /* CSS code goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-items: center;
+      height: 100vh;
+    }
+
+    .icon-box {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .icon {
+      color: #999999; /* Change the color for the greyed out icons */
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    .icon-label {
+      font-size: 18px;
+    }
+
+    .coming-soon {
+      color: #999999; /* Change the color for the "coming soon" text */
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon-box">
+    <a href="http://localhost/phpscript/jflight.html"><i class="icon fas fa-plane"></i></a>
+      <p class="icon-label">Airplane</p>
+    </div>
+    <div class="icon-box">
+      <a href="http://localhost/phpscript/jtrain.html"><i class="icon fas fa-train"></i></a>
+      <p class="icon-label">Train</p>
+    </div>
+    <div class="icon-box">
+      <i class="icon fas fa-ship"></i>
+      <p class="icon-label">Ship</p>
+      <p class="coming-soon">Coming Soon</p>
+    </div>
+    <div class="icon-box">
+      <i class="icon fas fa-bus"></i>
+      <p class="icon-label">Bus</p>
+      <p class="coming-soon">Coming Soon</p>
+    </div>
+  </div>
+  <!-- Add FontAwesome CDN link below -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+</body>
+</html>

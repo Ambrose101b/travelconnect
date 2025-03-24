@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a flight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('flight.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pane {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #6350C4;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6350C4;
+        }
+
+        .multi-city-inputs {
+            display: none;
+        }
+    </style>
+    <script>
+        function updateDestinationOptions() {
+            var fromSelect = document.getElementById("from");
+            var toSelect = document.getElementById("to");
+
+            // Clear existing options in "To" dropdown
+            toSelect.innerHTML = "";
+
+            // Add default disabled option
+            var defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.textContent = "Select destination city";
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            toSelect.appendChild(defaultOption);
+
+            // Get selected "From" city
+            var selectedFromCity = fromSelect.value;
+
+            // Loop through all options in "From" dropdown
+            for (var i = 0; i < fromSelect.options.length; i++) {
+                var fromOption = fromSelect.options[i];
+
+                // Exclude the selected "From" city from the options in "To" dropdown
+                if (fromOption.value !== selectedFromCity) {
+                    var toOption = document.createElement("option");
+                    toOption.value = fromOption.value;
+                    toOption.textContent = fromOption.textContent;
+                    toSelect.appendChild(toOption);
+                }
+            }
+        }
+
+        function showMultiCityInputs() {
+            var multiCityInputs = document.getElementsByClassName("multi-city-inputs")[0];
+            multiCityInputs.style.display = "block";
+
+            var fromInput1 = document.getElementById("from1");
+            var toInput1 = document.getElementById("to1");
+            var fromInput2 = document.getElementById("from2");
+
+            fromInput2.value = fromInput1.value;
+            toInput1.focus();
+        }
+
+        function hideMultiCityInputs() {
+            var multiCityInputs = document.getElementsByClassName("multi-city-inputs")[0];
+            multiCityInputs.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+   <div class="pane">
+    <h2>Book a flight</h2>
+    <form>
+        <label for="trip-type">Trip Type:</label>
+        <input type="radio" id="one-way" name="trip-type" value="one-way" checked>
+        <label for="one-way">One Way</label>
+
+        <input type="radio" id="round-trip" name="trip-type" value="round-trip">
+        <label for="round-trip">Round Trip</label>
+
+        <br>
+
+        <label for="from">From:</label>
+        <select id="from" name="from" onchange="updateDestinationOptions()" required>
+            <option value="" disabled selected>Select departure city</option>
+            <option value="Delhi (DEL)">Delhi (DEL)</option>
+            <option value="Mumbai (BOM)">Mumbai (BOM)</option>
+            <option value="Chennai (MAA)">Chennai (MAA)</option>
+            <option value="Kolkata (CCU)">Kolkata (CCU)</option>
+            <option value="Hyderabad (HYD)">Hyderabad (HYD)</option>
+            <option value="Ahmedabad (AMD)">Ahmedabad (AMD)</option>
+            <option value="Pune (PNQ)">Pune (PNQ)</option>
+            <option value="Jaipur (JAI)">Jaipur (JAI)</option>
+            <option value="Lucknow (LKO)">Lucknow (LKO)</option>
+            <option value="Goa (GOI)">Goa (GOI)</option>
+        </select>
+
+        <label for="to">To:</label>
+        <select id="to" name="to" required>
+            <option value="" disabled selected>Select destination city</option>
+                <option value="Delhi (DEL)">Delhi (DEL)</option>
+                <option value="Mumbai (BOM)">Mumbai (BOM)</option>
+                <option value="Chennai (MAA)">Chennai (MAA)</option>
+                <option value="Kolkata (CCU)">Kolkata (CCU)</option>
+                <option value="Hyderabad (HYD)">Hyderabad (HYD)</option>
+                <option value="Ahmedabad (AMD)">Ahmedabad (AMD)</option>
+                <option value="Pune (PNQ)">Pune (PNQ)</option>
+                <option value="Jaipur (JAI)">Jaipur (JAI)</option>
+                <option value="Lucknow (LKO)">Lucknow (LKO)</option>
+                <option value="Goa (GOI)">Goa (GOI)</option>
+            </select>
+
+        <br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <br>
+
+        <label for="return-date">Return Date:</label>
+        <input type="date" id="return-date" name="return-date" required>
+
+        <br>
+
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" max="10" required>
+
+        <br>
+
+        <label for="user-id">User ID:</label>
+        <input type="text" id="user-id" name="user-id" value="<?php echo $user_id; ?>" readonly>
+
+        <br>
+
+        <input type="submit" value="Book Now" onclick="redirectToFlightdetail()">
+        
+    </form>
+</div>
+    <script>
+     function redirectToFlightdetail() {
+      window.location.href = "http://localhost/phpscript/flighttrip.php";
+    }
+
+     // Function to update destination options when "From" city is changed
+    function updateDestinationOptions() {
+        var fromSelect = document.getElementById("from");
+        var toSelect = document.getElementById("to");
+
+        // Clear existing options in "To" dropdown
+        toSelect.innerHTML = "";
+
+        // Add default disabled option
+        var defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select destination city";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        toSelect.appendChild(defaultOption);
+
+        // Get selected "From" city
+        var selectedFromCity = fromSelect.value;
+
+        // Loop through all options in "From" dropdown
+        for (var i = 0; i < fromSelect.options.length; i++) {
+            var fromOption = fromSelect.options[i];
+
+            // Exclude the selected "From" city from the options in "To" dropdown
+            if (fromOption.value !== selectedFromCity) {
+                var toOption = document.createElement("option");
+                toOption.value = fromOption.value;
+                toOption.textContent = fromOption.textContent;
+                toSelect.appendChild(toOption);
+            }
+        }
+    }
+    </script>
+</body>
+</html>

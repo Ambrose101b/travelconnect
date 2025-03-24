@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      background-image: url('sky.jpg'); /* Replace with your sky background image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .flight {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      transform: translateY(-50%);
+      width: 500px; /* Increase the width to make the flight icon bigger */
+      height: 300px; /* Increase the height to make the flight icon bigger */
+      background-image: url('flighticon.png'); /* Replace with your flight icon image URL */
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: flightAnimation 5s linear infinite;
+    }
+
+    @keyframes flightAnimation {
+      0% {
+        left: -100px;
+      }
+      100% {
+        left: calc(100% + 100px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flight"></div>
+</body>
+</html>

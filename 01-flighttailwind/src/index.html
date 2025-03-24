@@ -1,0 +1,67 @@
+<div class="font-sans flex bg-sky-100 min-h-full p-3">
+  <form class="m-auto bg-white drop-shadow-lg rounded-lg overflow-hidden w-96 accent-gray-800">
+    <div class="p-6">
+      <div class="flex">
+        <div>
+          <input class="cursor-pointer text-gray-800" id="1" type="radio" name="type">
+          <label class="cursor-pointer text-xs font-bold" for="1">Round Trip</label>
+        </div>
+        <div class="ml-8">
+          <input class="cursor-pointer text-gray-800" id="2" type="radio" name="type">
+          <label class="cursor-pointer text-xs font-bold" for="2">One Way</label>
+        </div>
+      </div>
+      <div class="mt-4 relative">
+        <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+          <i class="text-sm text-gray-400 fa-regular fa-location-dot"></i>
+        </div>
+        <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Leaving from..." type="text">
+      </div>
+      <div class="mt-4 relative">
+        <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+          <i class="text-sm text-gray-400 fa-regular fa-location-dot"></i>
+        </div>
+        <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Going to..." type="text">
+      </div>
+      <div class="flex max-xs:flex-col gap-4 mt-4">
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-calendar"></i>
+          </div>
+          <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Depart" type="text">
+        </div>
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-calendar"></i>
+          </div>
+          <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Return" type="text">
+        </div>
+      </div>
+      <div class="flex max-xs:flex-col gap-4 mt-4">
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-user"></i>
+          </div>
+          <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800">
+            <option>1 Passenger</option>
+            <option>2 Passengers</option>
+            <option>3 Passengers</option>
+          </select>
+        </div>
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-seat-airline"></i>
+          </div>
+          <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800">
+            <option>Economy class</option>
+            <option>Business Class</option>
+            <option>First class</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="bg-gray-800 uppercase py-4 w-full text-white text-xs tracking-widest">Search Flights</button>
+    </div>
+  </form>
+</div>

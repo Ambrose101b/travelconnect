@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Train Ticket Booking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.0/JsBarcode.all.min.js"></script>
+  <style>
+<style>
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url('https://giffiles.alphacoders.com/213/21349.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form .field {
+      margin-bottom: 20px;
+    }
+
+    .form h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form label {
+      font-weight: bold;
+    }
+
+    .ticket {
+      margin-top: 20px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .ticket img {
+      max-width: 35%;
+    }
+
+    .ticket-btn {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .ticket-btn a {
+      display: inline-block;
+      background-color: #337ab7;
+      color: #fff;
+      border-color: #2e6da4;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form">
+      <h1>Train Ticket Booking</h1>
+      <form id="bookingForm">
+        <div class="field">
+          <label for="origin">Origin:</label>
+          <select id="origin" class="form-select" required>
+            <option value="">Select origin</option>
+                        <option value="Mumbai">Mumbai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ahmadabad">Ahmadabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Surat">Surat</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Patna">Patna</option>
+            <option value="Indore">Indore</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Ludhiana">Ludhiana</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Agra">Agra</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Meerut">Meerut</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Jabalpur">Jabalpur</option>
+            <option value="Jamshedpur">Jamshedpur</option>
+            <option value="Asansol">Asansol</option>
+            <option value="Dhanbad">Dhanbad</option>
+            <option value="Faridabad">Faridabad</option>
+            <option value="Allahabad">Allahabad</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Rajkot">Rajkot</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="destination">Destination:</label>
+          <select id="destination" class="form-select" required>
+            <option value="">Select destination</option>
+                        <option value="Mumbai">Mumbai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ahmadabad">Ahmadabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Surat">Surat</option>
+            <option value="Kanpur">Kanpur</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Patna">Patna</option>
+            <option value="Indore">Indore</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Ludhiana">Ludhiana</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Agra">Agra</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Meerut">Meerut</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Jabalpur">Jabalpur</option>
+            <option value="Jamshedpur">Jamshedpur</option>
+            <option value="Asansol">Asansol</option>
+            <option value="Dhanbad">Dhanbad</option>
+            <option value="Faridabad">Faridabad</option>
+            <option value="Allahabad">Allahabad</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Rajkot">Rajkot</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="name">Name:</label>
+          <input type="text" id="name" class="form-control" required>
+        </div>
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        <div class="field">
+          <label for="date">Date:</label>
+          <input type="text" id="date" class="form-control datepicker" required>
+        </div>
+        <div id="trainClass">
+          <label>
+            <input type="radio" name="class" value="economy" required>
+            <span>Economy</span>
+          </label>
+          <label>
+            <input type="radio" name="class" value="business" required>
+            <span>Business</span>
+          </label>
+        </div>
+        <div class="field">
+          <input type="submit" value="Book Ticket" class="btn btn-primary">
+        </div>
+      </form>
+    </div>
+
+    <div id="ticket" style="display: none;">
+      <div class="ticket">
+        <img src="http://localhost/phpscript/train-ticket-booking-app/dist/Indian_Railway.png" alt="Ticket Logo">
+        <h2>Ticket Details</h2>
+        <div class="ticket-info">
+          <p><strong>Origin:</strong> <span id="ticketOrigin"></span></p>
+          <p><strong>Destination:</strong> <span id="ticketDestination"></span></p>
+          <p><strong>Name:</strong> <span id="ticketName"></span></p>
+          <p><strong>Email:</strong> <span id="ticketEmail"></span></p>
+          <p><strong>Date:</strong> <span id="ticketDate"></span></p>
+          <p><strong>Class:</strong> <span id="ticketClass"></span></p>
+        </div>
+        <div class="ticket-btn">
+          <a href="#">Do Payment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".datepicker").datepicker({
+        dateFormat: "yy-mm-dd"
+      });
+
+      $("#bookingForm").submit(function (event) {
+        event.preventDefault();
+
+        var origin = $("#origin").val();
+        var destination = $("#destination").val();
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var date = $("#date").val();
+        var trainClass = $("input[name='class']:checked").val();
+
+        // Fill ticket details
+        $("#ticketOrigin").text(origin);
+        $("#ticketDestination").text(destination);
+        $("#ticketName").text(name);
+        $("#ticketEmail").text(email);
+        $("#ticketDate").text(date);
+        $("#ticketClass").text(trainClass);
+
+        // Show ticket
+        $("#ticket").show();
+
+        // Send email
+        $.ajax({
+          type: "POST",
+          url: "send-email.php", // Path to your server-side script that sends the email
+          data: {
+            origin: origin,
+            destination: destination,
+            name: name,
+            email: email,
+            date: date,
+            trainClass: trainClass
+          },
+          success: function (response) {
+            console.log("Email sent successfully!");
+          },
+          error: function (error) {
+            console.log("Error sending email:", error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<script src="https://cdn02.jotfor.ms/static/prototype.forms.js?3.3.43042" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/static/jotform.forms.js?3.3.43042" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.43042" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.43042" type="text/javascript"></script>
+<script defer src="https://cdn03.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.43042" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.43042" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/js/jotStorage.js?v=3.3.43042" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/vendor/autoFill.min.js?v=3.3.43042" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/s/umd/09aedbb0571/for-widgets-server.js?v=3.3.43042" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.newPaymentUI = true;
+	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+
+	JotForm.init(function(){
+	/*INIT-START*/
+if (window.JotForm && JotForm.accessible) $('input_45').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_99').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_100').setAttribute('tabindex',0);
+
+ JotForm.calendarMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ JotForm.calendarDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ JotForm.calendarOther = {"today":"Today"};
+ var languageOptions = document.querySelectorAll('#langList li'); 
+ for(var langIndex = 0; langIndex < languageOptions.length; langIndex++) { 
+   languageOptions[langIndex].on('click', function(e) { setTimeout(function(){ JotForm.setCalendar("15", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); }, 0); });
+ } 
+ JotForm.onTranslationsFetch(function() { JotForm.setCalendar("15", false, {"days":{"monday":true,"tuesday":true,"wednesday":true,"thursday":true,"friday":true,"saturday":true,"sunday":true},"future":true,"past":true,"custom":false,"ranges":false,"start":"","end":"","countSelectedDaysOnly":false}); });
+ JotForm.formatDate({date:(new Date()), dateField:$("id_"+15)});
+ JotForm.displayLocalTime("input_15_hourSelect", "input_15_minuteSelect","input_15_ampm", "input_15_timeInput", false);
+if (window.JotForm && JotForm.accessible) $('input_148').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_149').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_193_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_160').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_161').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_195_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_159').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_164').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_197_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_158').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_166').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_199_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_157').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_165').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_201_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+if (window.JotForm && JotForm.accessible) $('input_156').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_162').hint('ex: 23');
+       }, 20);
+      JotForm.setPhoneMaskingValidator( 'input_203_full', '\u0028\u0023\u0023\u0023\u0029 \u0023\u0023\u0023\u002d\u0023\u0023\u0023\u0023' );
+      FormTranslation.init({"detectUserLanguage":"1","firstPageOnly":"0","options":"Bengali","originalLanguage":"bn","primaryLanguage":"bn","saveUserLanguage":"1","showStatus":"Flag & Text","theme":"light-theme","version":"2"});
+          JotForm.isNewSaveAndContinueLaterActive = true;
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"submit","qid":"1","text":"Submit","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"departurejourneyDate","qid":"15","text":"Departure\u002FJourney  Date","type":"control_datetime"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"trainName","qid":"45","text":"Train Name or Number","type":"control_textbox"},null,null,null,null,{"name":"railTicket","qid":"50","text":"Rail Ticket Booking Form","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"reservationQuota86","qid":"86","text":"Reservation Quota ","type":"control_dropdown"},null,null,null,null,null,null,null,null,null,null,null,null,{"name":"journeyFrom","qid":"99","subLabel":"Station Code or full station name","text":"Journey From","type":"control_textbox"},{"name":"journeyTo","qid":"100","subLabel":"Destination Station Code or full station name","text":"Journey To","type":"control_textbox"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"divider140","qid":"140","type":"control_divider"},null,null,null,null,null,null,null,{"name":"passengersDetails148","qid":"148","subLabel":"Full Name","text":"Passengers Details 1","type":"control_textbox"},{"name":"age","qid":"149","text":"Age","type":"control_number"},{"name":"sex","qid":"150","text":"Sex","type":"control_dropdown"},{"name":"berthChoice","qid":"151","text":"Berth Choice","type":"control_dropdown"},null,null,null,null,{"name":"passengersDetails156","qid":"156","subLabel":"Full Name","text":"Passengers Details 6","type":"control_textbox"},{"name":"passengersDetails157","qid":"157","subLabel":"Full Name ","text":"Passengers Details 5","type":"control_textbox"},{"name":"passengersDetails158","qid":"158","subLabel":"Full Name","text":"Passengers Details 4","type":"control_textbox"},{"name":"passengersDetails159","qid":"159","subLabel":"Full Name","text":"Passengers Details 3","type":"control_textbox"},{"name":"passengersDetails160","qid":"160","subLabel":"Full Name","text":"Passengers Details 2","type":"control_textbox"},{"name":"age161","qid":"161","text":"Age","type":"control_number"},{"name":"age162","qid":"162","text":"Age","type":"control_number"},null,{"name":"age164","qid":"164","text":"Age","type":"control_number"},{"name":"age165","qid":"165","text":"Age","type":"control_number"},{"name":"age166","qid":"166","text":"Age","type":"control_number"},null,{"name":"sex168","qid":"168","text":"Sex","type":"control_dropdown"},{"name":"sex169","qid":"169","text":"Sex","type":"control_dropdown"},{"name":"sex170","qid":"170","text":"Sex","type":"control_dropdown"},{"name":"sex171","qid":"171","text":"Sex","type":"control_dropdown"},{"name":"sex172","qid":"172","text":"Sex","type":"control_dropdown"},{"name":"berthChoice173","qid":"173","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice174","qid":"174","text":"Berth Choice","type":"control_dropdown"},null,{"name":"berthChoice176","qid":"176","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice177","qid":"177","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice178","qid":"178","text":"Berth Choice","type":"control_dropdown"},{"name":"divider","qid":"179","type":"control_divider"},{"name":"divider180","qid":"180","type":"control_divider"},{"name":"divider181","qid":"181","type":"control_divider"},{"name":"divider182","qid":"182","type":"control_divider"},{"name":"divider183","qid":"183","type":"control_divider"},null,null,null,null,null,null,null,null,{"name":"typeA","qid":"192","text":"Type a question","type":"control_widget"},{"name":"phoneNumber","qid":"193","text":"Phone Number","type":"control_phone"},{"name":"email","qid":"194","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber195","qid":"195","text":"Phone Number","type":"control_phone"},{"name":"email196","qid":"196","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber197","qid":"197","text":"Phone Number","type":"control_phone"},{"name":"email198","qid":"198","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber199","qid":"199","text":"Phone Number","type":"control_phone"},{"name":"email200","qid":"200","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber201","qid":"201","text":"Phone Number","type":"control_phone"},{"name":"email202","qid":"202","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber203","qid":"203","text":"Phone Number","type":"control_phone"},{"name":"email204","qid":"204","subLabel":"example@example.com","text":"Email","type":"control_email"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"submit","qid":"1","text":"Submit","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"departurejourneyDate","qid":"15","text":"Departure\u002FJourney  Date","type":"control_datetime"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"trainName","qid":"45","text":"Train Name or Number","type":"control_textbox"},null,null,null,null,{"name":"railTicket","qid":"50","text":"Rail Ticket Booking Form","type":"control_head"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"reservationQuota86","qid":"86","text":"Reservation Quota ","type":"control_dropdown"},null,null,null,null,null,null,null,null,null,null,null,null,{"name":"journeyFrom","qid":"99","subLabel":"Station Code or full station name","text":"Journey From","type":"control_textbox"},{"name":"journeyTo","qid":"100","subLabel":"Destination Station Code or full station name","text":"Journey To","type":"control_textbox"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"name":"divider140","qid":"140","type":"control_divider"},null,null,null,null,null,null,null,{"name":"passengersDetails148","qid":"148","subLabel":"Full Name","text":"Passengers Details 1","type":"control_textbox"},{"name":"age","qid":"149","text":"Age","type":"control_number"},{"name":"sex","qid":"150","text":"Sex","type":"control_dropdown"},{"name":"berthChoice","qid":"151","text":"Berth Choice","type":"control_dropdown"},null,null,null,null,{"name":"passengersDetails156","qid":"156","subLabel":"Full Name","text":"Passengers Details 6","type":"control_textbox"},{"name":"passengersDetails157","qid":"157","subLabel":"Full Name ","text":"Passengers Details 5","type":"control_textbox"},{"name":"passengersDetails158","qid":"158","subLabel":"Full Name","text":"Passengers Details 4","type":"control_textbox"},{"name":"passengersDetails159","qid":"159","subLabel":"Full Name","text":"Passengers Details 3","type":"control_textbox"},{"name":"passengersDetails160","qid":"160","subLabel":"Full Name","text":"Passengers Details 2","type":"control_textbox"},{"name":"age161","qid":"161","text":"Age","type":"control_number"},{"name":"age162","qid":"162","text":"Age","type":"control_number"},null,{"name":"age164","qid":"164","text":"Age","type":"control_number"},{"name":"age165","qid":"165","text":"Age","type":"control_number"},{"name":"age166","qid":"166","text":"Age","type":"control_number"},null,{"name":"sex168","qid":"168","text":"Sex","type":"control_dropdown"},{"name":"sex169","qid":"169","text":"Sex","type":"control_dropdown"},{"name":"sex170","qid":"170","text":"Sex","type":"control_dropdown"},{"name":"sex171","qid":"171","text":"Sex","type":"control_dropdown"},{"name":"sex172","qid":"172","text":"Sex","type":"control_dropdown"},{"name":"berthChoice173","qid":"173","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice174","qid":"174","text":"Berth Choice","type":"control_dropdown"},null,{"name":"berthChoice176","qid":"176","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice177","qid":"177","text":"Berth Choice","type":"control_dropdown"},{"name":"berthChoice178","qid":"178","text":"Berth Choice","type":"control_dropdown"},{"name":"divider","qid":"179","type":"control_divider"},{"name":"divider180","qid":"180","type":"control_divider"},{"name":"divider181","qid":"181","type":"control_divider"},{"name":"divider182","qid":"182","type":"control_divider"},{"name":"divider183","qid":"183","type":"control_divider"},null,null,null,null,null,null,null,null,{"name":"typeA","qid":"192","text":"Type a question","type":"control_widget"},{"name":"phoneNumber","qid":"193","text":"Phone Number","type":"control_phone"},{"name":"email","qid":"194","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber195","qid":"195","text":"Phone Number","type":"control_phone"},{"name":"email196","qid":"196","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber197","qid":"197","text":"Phone Number","type":"control_phone"},{"name":"email198","qid":"198","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber199","qid":"199","text":"Phone Number","type":"control_phone"},{"name":"email200","qid":"200","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber201","qid":"201","text":"Phone Number","type":"control_phone"},{"name":"email202","qid":"202","subLabel":"example@example.com","text":"Email","type":"control_email"},{"name":"phoneNumber203","qid":"203","text":"Phone Number","type":"control_phone"},{"name":"email204","qid":"204","subLabel":"example@example.com","text":"Email","type":"control_email"}]);}, 20); 
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.43042&themeRevisionID=5f7ed99c2c2c7240ba580251"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.43042" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.43042" />
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/donationBox.css?v=3.3.43042">
+<style type="text/css" id="form-designer-style">
+    /* Injected CSS Code */
+/*PREFERENCES STYLE*/
+    .form-all {
+      font-family: Inter, sans-serif;
+    }
+  
+    .form-label.form-label-auto {
+      
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+  
+    }
+  
+    .form-line {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .form-all {
+      max-width: 752px;
+      width: 100%;
+    }
+  
+    .form-label.form-label-left,
+    .form-label.form-label-right,
+    .form-label.form-label-left.form-label-auto,
+    .form-label.form-label-right.form-label-auto {
+      width: 230px;
+    }
+  
+    .form-all {
+      font-size: 16px
+    }
+  
+    .supernova .form-all, .form-all {
+      background-color: #fff;
+    }
+  
+    .form-all {
+      color: #2C3345;
+    }
+    .form-header-group .form-header {
+      color: #2C3345;
+    }
+    .form-header-group .form-subHeader {
+      color: #2C3345;
+    }
+    .form-label-top,
+    .form-label-left,
+    .form-label-right,
+    .form-html,
+    .form-checkbox-item label,
+    .form-radio-item label,
+    span.FITB .qb-checkbox-label,
+    span.FITB .qb-radiobox-label,
+    span.FITB .form-radio label,
+    span.FITB .form-checkbox label,
+    [data-blotid][data-type=checkbox] [data-labelid],
+    [data-blotid][data-type=radiobox] [data-labelid],
+    span.FITB-inptCont[data-type=checkbox] label,
+    span.FITB-inptCont[data-type=radiobox] label {
+      color: #2C3345;
+    }
+    .form-sub-label {
+      color: #464d5f;
+    }
+  
+  .supernova {
+    background-color: #ecedf3;
+  }
+  .supernova body {
+    background: transparent;
+  }
+  
+    .form-textbox,
+    .form-textarea,
+    .form-dropdown,
+    .form-radio-other-input,
+    .form-checkbox-other-input,
+    .form-captcha input,
+    .form-spinner input {
+      background-color: #fff;
+    }
+  
+    .supernova {
+      background-image: none;
+    }
+    #stage {
+      background-image: none;
+    };
+  
+    .form-all {
+      background-image: none;
+    }
+  
+    .form-all {
+      position: relative;
+    }
+    .form-all:before {
+      content: "";
+      background-image: url("https://www.jotform.com/uploads/chinnachinnu751/form_files/travelconnect.6498a416e2aaf9.73902343.png");
+      display: inline-block;
+      height: 210.4384133611691px;
+      position: absolute;
+      background-size: 720px 210px;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+    .form-all {
+      margin-top: 230px;
+    }
+    .form-all:before {
+      top: -220px;
+      background-position: top center;
+      left: 0;
+    }
+          /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
+    /* Injected CSS Code */
+</style>
+
+<form class="jotform-form" action="https://submit.jotform.com/submit/231756128642458" method="post" name="form_231756128642458" id="231756128642458" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231756128642458" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <link type="text/css" rel="stylesheet" media="all" href="https://cdn.jotfor.ms/wizards/languageWizard/custom-dropdown/css/lang-dd.css?3.3.43042" />
+    <div class="cont"><input type="text" id="input_language" name="input_language" style="display:none" />
+      <div class="language-dd" id="langDd" style="display:none">
+        <div class="dd-placeholder lang-emp">Language</div>
+        <ul class="lang-list dn" id="langList">
+          <li data-lang="bn" class="bn">Bengali</li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jotfor.ms/js/formTranslation.v2.js?3.3.43042"></script>
+    <ul class="form-section page-section">
+      <li id="cid_50" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httac htvam">
+            <h1 id="header_50" class="form-header" data-component="header">Rail Ticket Booking Form</h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_dropdown" id="id_86"><label class="form-label form-label-top form-label-auto" id="label_86" for="input_86"> Reservation Quota </label>
+        <div id="cid_86" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_86" name="q86_reservationQuota86" style="width:310px" data-component="dropdown" aria-label="Reservation Quota ">
+            <option value="">Please Select</option>
+            <option value="First Class">First Class</option>
+            <option value="Second Class">Second Class</option>
+            <option value="Third Class">Third Class</option>
+            <option value="Fourth Class">Fourth Class</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_45"><label class="form-label form-label-top form-label-auto" id="label_45" for="input_45"> Train Name or Number </label>
+        <div id="cid_45" class="form-input-wide" data-layout="half"> <input type="text" id="input_45" name="q45_trainName" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_45" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_textbox" id="id_99"><label class="form-label form-label-top form-label-auto" id="label_99" for="input_99"> Journey From </label>
+        <div id="cid_99" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_99" name="q99_journeyFrom" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_99 sublabel_input_99" /><label class="form-sub-label" for="input_99" id="sublabel_input_99" style="min-height:13px" aria-hidden="false">Station Code or full station name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_textbox" id="id_100"><label class="form-label form-label-top form-label-auto" id="label_100" for="input_100"> Journey To </label>
+        <div id="cid_100" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_100" name="q100_journeyTo" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_100 sublabel_input_100" /><label class="form-sub-label" for="input_100" id="sublabel_input_100" style="min-height:13px" aria-hidden="false">Destination Station Code or full station name</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_datetime" id="id_15"><label class="form-label form-label-left" id="label_15" for="day_15"> Departure/Journey Date </label>
+        <div id="cid_15" class="form-input" data-layout="half">
+          <div data-wrapper-react="true" class="extended notLiteMode"><span class="form-sub-label-container day" style="vertical-align:top"><input type="tel" class="currentDate form-textbox validate[limitDate]" id="day_15" name="q15_departurejourneyDate[day]" size="2" data-maxlength="2" data-age="" maxLength="2" value="25" autoComplete="off" aria-labelledby="label_15 sublabel_15_day" /><span class="date-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="day_15" id="sublabel_15_day" style="min-height:13px" aria-hidden="false">Day</label></span><span class="form-sub-label-container month" style="vertical-align:top"><input type="tel" class="form-textbox validate[limitDate]" id="month_15" name="q15_departurejourneyDate[month]" size="2" data-maxlength="2" data-age="" maxLength="2" value="06" autoComplete="off" aria-labelledby="label_15 sublabel_15_month" /><span class="date-separate" aria-hidden="true"> -</span><label class="form-sub-label" for="month_15" id="sublabel_15_month" style="min-height:13px" aria-hidden="false">Month</label></span><span class="form-sub-label-container year" style="vertical-align:top"><input type="tel" class="form-textbox validate[limitDate]" id="year_15" name="q15_departurejourneyDate[year]" size="4" data-maxlength="4" data-age="" maxLength="4" value="2023" autoComplete="off" aria-labelledby="label_15 sublabel_15_year" /><label class="form-sub-label" for="year_15" id="sublabel_15_year" style="min-height:13px" aria-hidden="false">Year</label></span><span class="form-sub-label-container" style="vertical-align:top"><img class="showAutoCalendar newDefaultTheme-dateIcon icon-seperatedMode" alt="Pick a Date" id="input_15_pick" src="https://cdn.jotfor.ms/images/calendar.png" data-component="datetime" aria-hidden="true" data-allow-time="No" data-version="v2" /><label class="form-sub-label" for="input_15_pick" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap" aria-hidden="true">Date Picker Icon</label></span></div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_140">
+        <div id="cid_140" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_148"><label class="form-label form-label-top form-label-auto" id="label_148" for="input_148"> Passengers Details 1 </label>
+        <div id="cid_148" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_148" name="q148_passengersDetails148" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_148 sublabel_input_148" /><label class="form-sub-label" for="input_148" id="sublabel_input_148" style="min-height:13px" aria-hidden="false">Full Name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_149"><label class="form-label form-label-top form-label-auto" id="label_149" for="input_149"> Age </label>
+        <div id="cid_149" class="form-input-wide" data-layout="half"> <input type="number" id="input_149" name="q149_age" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_149" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_150"><label class="form-label form-label-top form-label-auto" id="label_150" for="input_150"> Sex </label>
+        <div id="cid_150" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_150" name="q150_sex" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_151"><label class="form-label form-label-top form-label-auto" id="label_151" for="input_151"> Berth Choice </label>
+        <div id="cid_151" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_151" name="q151_berthChoice" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_193"><label class="form-label form-label-top form-label-auto" id="label_193" for="input_193_full"> Phone Number </label>
+        <div id="cid_193" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_193_full" name="q193_phoneNumber[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_193 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_193 sublabel_193_masked" /><label class="form-sub-label" for="input_193_full" id="sublabel_193_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_194"><label class="form-label form-label-top form-label-auto" id="label_194" for="input_194"> Email </label>
+        <div id="cid_194" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_194" name="q194_email" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_194 sublabel_input_194" /><label class="form-sub-label" for="input_194" id="sublabel_input_194" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_179">
+        <div id="cid_179" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_160"><label class="form-label form-label-top form-label-auto" id="label_160" for="input_160"> Passengers Details 2 </label>
+        <div id="cid_160" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_160" name="q160_passengersDetails160" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_160 sublabel_input_160" /><label class="form-sub-label" for="input_160" id="sublabel_input_160" style="min-height:13px" aria-hidden="false">Full Name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_161"><label class="form-label form-label-top form-label-auto" id="label_161" for="input_161"> Age </label>
+        <div id="cid_161" class="form-input-wide" data-layout="half"> <input type="number" id="input_161" name="q161_age161" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_161" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_172"><label class="form-label form-label-top form-label-auto" id="label_172" for="input_172"> Sex </label>
+        <div id="cid_172" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_172" name="q172_sex172" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_178"><label class="form-label form-label-top form-label-auto" id="label_178" for="input_178"> Berth Choice </label>
+        <div id="cid_178" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_178" name="q178_berthChoice178" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_195"><label class="form-label form-label-top form-label-auto" id="label_195" for="input_195_full"> Phone Number </label>
+        <div id="cid_195" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_195_full" name="q195_phoneNumber195[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_195 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_195 sublabel_195_masked" /><label class="form-sub-label" for="input_195_full" id="sublabel_195_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_196"><label class="form-label form-label-top form-label-auto" id="label_196" for="input_196"> Email </label>
+        <div id="cid_196" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_196" name="q196_email196" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_196 sublabel_input_196" /><label class="form-sub-label" for="input_196" id="sublabel_input_196" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_180">
+        <div id="cid_180" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_159"><label class="form-label form-label-top form-label-auto" id="label_159" for="input_159"> Passengers Details 3 </label>
+        <div id="cid_159" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_159" name="q159_passengersDetails159" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_159 sublabel_input_159" /><label class="form-sub-label" for="input_159" id="sublabel_input_159" style="min-height:13px" aria-hidden="false">Full Name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_164"><label class="form-label form-label-top form-label-auto" id="label_164" for="input_164"> Age </label>
+        <div id="cid_164" class="form-input-wide" data-layout="half"> <input type="number" id="input_164" name="q164_age164" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_164" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_170"><label class="form-label form-label-top form-label-auto" id="label_170" for="input_170"> Sex </label>
+        <div id="cid_170" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_170" name="q170_sex170" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_174"><label class="form-label form-label-top form-label-auto" id="label_174" for="input_174"> Berth Choice </label>
+        <div id="cid_174" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_174" name="q174_berthChoice174" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_197"><label class="form-label form-label-top form-label-auto" id="label_197" for="input_197_full"> Phone Number </label>
+        <div id="cid_197" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_197_full" name="q197_phoneNumber197[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_197 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_197 sublabel_197_masked" /><label class="form-sub-label" for="input_197_full" id="sublabel_197_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_198"><label class="form-label form-label-top form-label-auto" id="label_198" for="input_198"> Email </label>
+        <div id="cid_198" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_198" name="q198_email198" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_198 sublabel_input_198" /><label class="form-sub-label" for="input_198" id="sublabel_input_198" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_181">
+        <div id="cid_181" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_158"><label class="form-label form-label-top form-label-auto" id="label_158" for="input_158"> Passengers Details 4 </label>
+        <div id="cid_158" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_158" name="q158_passengersDetails158" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_158 sublabel_input_158" /><label class="form-sub-label" for="input_158" id="sublabel_input_158" style="min-height:13px" aria-hidden="false">Full Name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_166"><label class="form-label form-label-top form-label-auto" id="label_166" for="input_166"> Age </label>
+        <div id="cid_166" class="form-input-wide" data-layout="half"> <input type="number" id="input_166" name="q166_age166" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_166" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_169"><label class="form-label form-label-top form-label-auto" id="label_169" for="input_169"> Sex </label>
+        <div id="cid_169" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_169" name="q169_sex169" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_177"><label class="form-label form-label-top form-label-auto" id="label_177" for="input_177"> Berth Choice </label>
+        <div id="cid_177" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_177" name="q177_berthChoice177" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_199"><label class="form-label form-label-top form-label-auto" id="label_199" for="input_199_full"> Phone Number </label>
+        <div id="cid_199" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_199_full" name="q199_phoneNumber199[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_199 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_199 sublabel_199_masked" /><label class="form-sub-label" for="input_199_full" id="sublabel_199_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_200"><label class="form-label form-label-top form-label-auto" id="label_200" for="input_200"> Email </label>
+        <div id="cid_200" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_200" name="q200_email200" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_200 sublabel_input_200" /><label class="form-sub-label" for="input_200" id="sublabel_input_200" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_182">
+        <div id="cid_182" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_157"><label class="form-label form-label-top form-label-auto" id="label_157" for="input_157"> Passengers Details 5 </label>
+        <div id="cid_157" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_157" name="q157_passengersDetails157" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_157 sublabel_input_157" /><label class="form-sub-label" for="input_157" id="sublabel_input_157" style="min-height:13px" aria-hidden="false">Full Name </label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_165"><label class="form-label form-label-top form-label-auto" id="label_165" for="input_165"> Age </label>
+        <div id="cid_165" class="form-input-wide" data-layout="half"> <input type="number" id="input_165" name="q165_age165" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_165" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_171"><label class="form-label form-label-top form-label-auto" id="label_171" for="input_171"> Sex </label>
+        <div id="cid_171" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_171" name="q171_sex171" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_173"><label class="form-label form-label-top form-label-auto" id="label_173" for="input_173"> Berth Choice </label>
+        <div id="cid_173" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_173" name="q173_berthChoice173" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_201"><label class="form-label form-label-top form-label-auto" id="label_201" for="input_201_full"> Phone Number </label>
+        <div id="cid_201" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_201_full" name="q201_phoneNumber201[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_201 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_201 sublabel_201_masked" /><label class="form-sub-label" for="input_201_full" id="sublabel_201_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_202"><label class="form-label form-label-top form-label-auto" id="label_202" for="input_202"> Email </label>
+        <div id="cid_202" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_202" name="q202_email202" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_202 sublabel_input_202" /><label class="form-sub-label" for="input_202" id="sublabel_input_202" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_divider" id="id_183">
+        <div id="cid_183" class="form-input-wide" data-layout="full">
+          <div class="divider" data-component="divider" style="border-bottom-width:1px;border-bottom-style:solid;border-color:#e6e6e6;height:1px;margin-left:0px;margin-right:0px;margin-top:5px;margin-bottom:5px"></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_156"><label class="form-label form-label-top form-label-auto" id="label_156" for="input_156"> Passengers Details 6 </label>
+        <div id="cid_156" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="input_156" name="q156_passengersDetails156" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_156 sublabel_input_156" /><label class="form-sub-label" for="input_156" id="sublabel_input_156" style="min-height:13px" aria-hidden="false">Full Name</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_number" id="id_162"><label class="form-label form-label-top form-label-auto" id="label_162" for="input_162"> Age </label>
+        <div id="cid_162" class="form-input-wide" data-layout="half"> <input type="number" id="input_162" name="q162_age162" data-type="input-number" class=" form-number-input form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: 23" data-numbermin="0" data-numbermax="100" data-component="number" aria-labelledby="label_162" step="any" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_dropdown" id="id_168"><label class="form-label form-label-top form-label-auto" id="label_168" for="input_168"> Sex </label>
+        <div id="cid_168" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_168" name="q168_sex168" style="width:310px" data-component="dropdown" aria-label="Sex">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_dropdown" id="id_176"><label class="form-label form-label-top form-label-auto" id="label_176" for="input_176"> Berth Choice </label>
+        <div id="cid_176" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="input_176" name="q176_berthChoice176" style="width:310px" data-component="dropdown" aria-label="Berth Choice">
+            <option value="">Please Select</option>
+            <option value="Select">Select</option>
+            <option value="Lower">Lower</option>
+            <option value="Middle">Middle</option>
+            <option value="Upper">Upper</option>
+            <option value="Side Lower">Side Lower</option>
+            <option value="Side Upper">Side Upper</option>
+          </select> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_phone" id="id_203"><label class="form-label form-label-top form-label-auto" id="label_203" for="input_203_full"> Phone Number </label>
+        <div id="cid_203" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_203_full" name="q203_phoneNumber203[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_203 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_203 sublabel_203_masked" /><label class="form-sub-label" for="input_203_full" id="sublabel_203_masked" style="min-height:13px" aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_email" id="id_204"><label class="form-label form-label-top form-label-auto" id="label_204" for="input_204"> Email </label>
+        <div id="cid_204" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_204" name="q204_email204" class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="email" aria-labelledby="label_204 sublabel_input_204" /><label class="form-sub-label" for="input_204" id="sublabel_input_204" style="min-height:13px" aria-hidden="false">example@example.com</label></span> </div>
+      </li>
+      <li class="form-line" data-type="control_widget" id="id_192">
+        <div id="cid_192" class="form-input-wide termsAndConditionsV2" data-layout="full">
+          <div data-widget-name="Terms &amp;amp;amp;amp;amp; Conditions" style="width:100%;text-align:Left;overflow-x:auto" data-component="widget-field"><iframe data-client-id="52948fb29322cd302b00000c" title="Terms &amp;amp;amp;amp;amp; Conditions" frameBorder="0" scrolling="no" allowtransparency="true" allow="geolocation; microphone; camera; autoplay; encrypted-media; fullscreen" data-type="iframe" class="custom-field-frame" id="customFieldFrame_192" src="" style="max-width:620px;border:none;width:100%;height:50px" data-width="620" data-height="50"></iframe>
+            <div class="widget-inputs-wrapper"><input type="hidden" id="input_192" class="form-hidden form-widget  " name="q192_typeA" value="" /><input type="hidden" id="widget_settings_192" class="form-hidden form-widget-settings" value="%5B%7B%22name%22%3A%22termsText%22%2C%22value%22%3A%22I%20agree%20to%20%7Bterms%20%26%20conditions%7D.%22%7D%2C%7B%22name%22%3A%22termsLink%22%2C%22value%22%3A%22www.example.com%22%7D%2C%7B%22name%22%3A%22theme%22%2C%22value%22%3A%22default%22%7D%2C%7B%22name%22%3A%22acceptedText%22%2C%22value%22%3A%22Accepted%22%7D%5D" data-version="2" /></div>
+            <script type="text/javascript">
+              setTimeout(function()
+              {
+                var _cFieldFrame = document.getElementById("customFieldFrame_192");
+                if (_cFieldFrame)
+                {
+                  _cFieldFrame.onload = function()
+                  {
+                    if (typeof widgetFrameLoaded !== 'undefined')
+                    {
+                      widgetFrameLoaded(192,
+                      {
+                        "formID": 231756128642458
+                      })
+                    }
+                  };
+                  _cFieldFrame.src = "//widgets.jotform.io/termsConditions/?qid=192&ref=" +
+                    encodeURIComponent(window.location.protocol + "//" + window.location.host) + '&ndt=1' + '' + '' +
+                    '&injectCSS=' + encodeURIComponent(window.location.search.indexOf("ndt=1") > -1);
+                  _cFieldFrame.addClassName("custom-field-frame-rendered");
+                }
+              }, 0);
+            </script>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_1">
+        <div id="cid_1" class="form-input-wide" data-layout="full">
+          <div data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField"><button id="input_scl_1" type="button" class="form-submit-button form-sacl-button js-new-sacl-button  form-submit-button-simple_grey jf-form-buttons " data-component="button">Save</button><button id="input_1" type="submit" class="form-submit-button form-submit-button-simple_grey submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+        </div>
+      </li>
+      <li style="clear:both"></li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+    </ul>
+  </div>
+  <script>
+    JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+    JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231756128642458" />
+  <script type="text/javascript">
+    var all_spc = document.querySelectorAll("form[id='231756128642458'] .si" + "mple" + "_spc");
+    for (var i = 0; i < all_spc.length; i++)
+    {
+      all_spc[i].value = "231756128642458-231756128642458";
+    }
+  </script>
+  <div class="formFooter-heightMask"></div>
+  <div class="formFooter f6 branding21" style="display: flex!important; opacity: 1!important; visibility: visible!important;">
+    <div class="formFooter-wrapper formFooter-leftSide">
+      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231756128642458&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink">
+        <img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo2021/jotform-logo-white.svg" alt="Jotform Logo" style="height: 44px;">
+      </a>
+    </div>
+    <div class="formFooter-wrapper formFooter-rightSide">
+      <span class="formFooter-text">Now create your own Jotform - It's free!</span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231756128642458&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own Jotform</a>
+    </div>
+  </div>
+</form><script type="text/javascript">JotForm.ownerView=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.43042"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.43042"></script>
+<script type="text/javascript">window.GOOGLE_SIGNON = "172124630376-qk1qmdfmur2ojaf39e070iqhpt2foaip.apps.googleusercontent.com"</script>
+<script type="text/javascript">window.FACEBOOK_SIGNON_APP_ID = "1140740696088074"</script>
+<script type="text/javascript">window.MICROSOFT_SIGNON_CLIENT_ID = "482577e8-f8d0-4a09-bbbb-15de3d05eebe"</script>
+<script>window.JotFormAPIEndpoint = "https://api.jotform.com"; </script>
+<script>window.___JFsclActive = true; </script>
+<script>window.JFForm = { id: '231756128642458', draftID: '', skippable: true, isHipaa: '', enforceHIPAARuleSet: false };</script> 
+<script defer src="https://cdn01.jotfor.ms/s/umd/09aedbb0571/for-formuser.js"></script>

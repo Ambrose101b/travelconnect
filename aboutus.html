@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    /* CSS code goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(https://i.pinimg.com/originals/8d/d8/f6/8dd8f64f4d9cd6f68a3082a875640a97.gif); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+    }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+  border-radius: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #6350C4; /* Change the color value to your desired color */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 42%; /* Increase the margin-right to add more space */
+}
+
+.logo img {
+  height: 120px; /* Increase the height to adjust the logo size */
+  margin-right: 20px;
+}
+
+.logo h1 {
+  font-size: 36px; /* Increase the font size for "Travel Connect" text */
+  font-weight: bold;
+}
+
+nav {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+
+nav ul li a.active {
+  color: blue;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a.active::after {
+  transform: scaleX(1);
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+.start-booking-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.start-booking-button:hover {
+  background-color: #6350C4;
+}
+
+.account-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.account-button:hover {
+  background-color: #6350C4;
+}
+  </style>
+</head>
+<body>
+ <script>
+    function redirectToSignup() {
+      window.location.href = "index.html"; // Redirect to the sign-up page
+    }
+  </script>
+  <div class="container">
+
+     <div class="container">
+    <h1>About Us</h1>
+    <p>At Travel Connect, we are passionate about making travel accessible, enjoyable, and memorable. Our mission is to empower travelers by providing a comprehensive platform that simplifies the travel booking process and offers personalized experiences.</p>
+    <p>We understand the excitement and anticipation that comes with planning a trip. That's why we've built a user-friendly platform that allows you to explore various travel options, compare fares, and make secure bookings in just a few simple steps. Whether you're planning a vacation, a business trip, or an adventure, we've got you covered.</p>
+    <p>With Travel Connect, you can customize your travel preferences, receive personalized recommendations, and manage your itineraries effortlessly. Our goal is to ensure that your travel experience is seamless and stress-free, from the moment you start planning until you return home.</p>
+    <p>As a company, we are committed to delivering exceptional customer service. Our dedicated support team is available around the clock to assist you with any queries or concerns. We value your feedback and continuously strive to enhance our services to meet your evolving travel needs.</p>
+    <p>Join our travel community and connect with like-minded individuals who share the passion for exploration. Share your travel stories, tips, and recommendations. Let's inspire and empower each other to embark on incredible journeys and create lifelong memories.</p>
+    <p>Thank you for choosing Travel Connect. We look forward to being your trusted companion on your travel adventures.</p>
+  </div>
+</body>
+</html>

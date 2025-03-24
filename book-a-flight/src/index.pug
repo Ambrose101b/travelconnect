@@ -1,0 +1,87 @@
+mixin themeBtn
+	button.c-button.c-button--secondary.c-theme
+		svg(xmlns='http://www.w3.org/2000/svg' width="20" height="20" viewbox='0 0 32 32' fill="currentColor")
+			path(d='M 15 3 L 15 8 L 17 8 L 17 3 L 15 3 z M 7.5 6.09375 L 6.09375 7.5 L 9.625 11.0625 L 11.0625 9.625 L 7.5 6.09375 z M 24.5 6.09375 L 20.9375 9.625 L 22.375 11.0625 L 25.90625 7.5 L 24.5 6.09375 z M 16 9 C 12.145852 9 9 12.145852 9 16 C 9 19.854148 12.145852 23 16 23 C 19.854148 23 23 19.854148 23 16 C 23 12.145852 19.854148 9 16 9 z M 16 11 C 18.773268 11 21 13.226732 21 16 C 21 18.773268 18.773268 21 16 21 C 13.226732 21 11 18.773268 11 16 C 11 13.226732 13.226732 11 16 11 z M 3 15 L 3 17 L 8 17 L 8 15 L 3 15 z M 24 15 L 24 17 L 29 17 L 29 15 L 24 15 z M 9.625 20.9375 L 6.09375 24.5 L 7.5 25.90625 L 11.0625 22.375 L 9.625 20.9375 z M 22.375 20.9375 L 20.9375 22.375 L 24.5 25.90625 L 25.90625 24.5 L 22.375 20.9375 z M 15 24 L 15 29 L 17 29 L 17 24 L 15 24 z')
+
+.l-layout
+	.c-card#selectFlights
+		.c-card__header
+			.c-media
+				.c-media__img.c-avatar.c-avatar--accent(data-avatar="k")
+				.c-media__content
+					h4.c-media__title Kimi Raikkonen
+					span.u-text--b-default Travel Points: 
+					span.u-text--success 27,900 points
+			+themeBtn
+		.c-card__body.u-padding-b--xs
+			.c-schedule
+				.c-schedule__item
+					small.u-text--b-default From
+					strong.u-text--info TPA
+				.c-schedule__item.c-plane
+					svg.c-plane__icon(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill="currentColor")
+						path(d='M10.18 9')
+						path(d='M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z')
+				.c-schedule__item
+					small.u-text--b-default To
+					strong.u-text--info SFO
+				.c-schedule__item
+					.c-toggle
+						button.c-toggle__btn.c-toggle__btn--active(data-payment="dollars") $
+						button.c-toggle__btn(data-payment="points") PTS
+		.c-divider.u-margin-b--xs
+		.c-card__body.u-text--center.u-padding-t--xs.u-padding-b--sm
+			small
+				span June 1, 2019 
+				span.u-text--b-default to 
+				span Jun 5, 2019
+		ul.c-list#flightList
+		.c-card__body#flightActions(style="display: none;")
+			button.c-button.c-button--success.c-button--full.c-button--lg#confirm Confirm Flight &rarr;
+		
+	.c-card#reviewFlights(style="display: none;")
+		.c-card__body
+			+themeBtn
+			button.c-button.c-button--secondary.c-button--sm#back &larr; Select Flight
+			h3.u-margin-b--xs.u-margin-t--md TPA to SFO
+			small.u-text--b-default June 1 to June 5
+			.c-divider
+			.u-text--b-default.u-margin-b--sm
+				small Flight Summary
+			.u-border.u-border.u-border--info.u-padding--md.u-rounded--lg.u-margin-b--md
+				.u-margin-b--xs.u-text--info
+					small Departs
+				table.c-table
+					tbody
+						tr
+							td Tampa International Airport
+							th.u-text--right#departureTime 11:45 AM
+			.u-border.u-border.u-border--success.u-padding--md.u-rounded--lg.u-margin-b--md
+				.u-margin-b--xs.u-text--success
+					small Arrives
+				table.c-table
+					tbody
+						tr
+							td San Francisco International Airport
+							th.u-text--right#arrivalTime 4:50 PM
+			.c-divider
+			table.c-table
+				thead
+					tr
+						td.u-padding-b--sm
+							small.u-text--b-default Checkout
+						td.u-text--right.u-padding-b--sm
+							small.u-text--success.u-margin-r--xs (points available) 27,000
+				tbody
+					tr
+						td.u-padding-b--sm Cost
+						td.u-text--right.u-padding-b--sm
+							span#activeCost -20,000
+					tr
+						td.u-padding-b--sm Tax
+						td.u-text--right.u-padding-b--sm -$0.00
+			.c-divider
+			.u-text--right
+				h2.u-margin-b--md#total $350.00
+			button.c-button.c-button--lg.c-button--full.c-button--success Purchase Flight
+				

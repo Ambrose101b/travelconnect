@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: url('airplane-train-think-paper-banner.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 35px;
+      border-radius: 5px;
+      width: 380px;
+      margin: 0 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #555;
+      text-decoration: none;
+    }
+    
+    .progress {
+      height: 3px !important;
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
+
+  .show-pass {
+      position: absolute;
+      top: 5%;
+      right: 8%;
+  }
+
+  .progress-bar-danger {
+      background-color: #e90f10;
+  }
+
+  .progress-bar-warning {
+      background-color: #ffad00;
+  }
+
+  .progress-bar-success {
+      background-color: #02b502;
+  }
+  .fa-eye {
+    color: #022255;
+    cursor: pointer;
+}
+
+.ex-account p a {
+    color: #f6086e;
+    text-decoration: underline;
+}
+
+.fa-circle {
+    font-size: 6px;
+}
+
+.fa-check {
+    color: #02b502;
+}
+  </style>
+  <script>
+    function showSignUp() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('signup').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('login').style.display = 'block';
+      document.getElementById('signup').style.display = 'none';
+    }
+
+    function login() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var userID = '123'; // Replace with the actual user's ID retrieved from the server
+      window.location.href = 'dashboard.php?id=' + userID; // Redirect to the dashboard page with user ID
+
+      // Perform basic client-side validation
+      if (email === '' || password === '') {
+        alert('Please enter both email and password.');
+        return;
+      }
+
+      // Simulate server-side login verification
+      // ... Your server-side code for login verification goes here ...
+      // You should compare the entered email and password with the database records or any other authentication mechanism
+
+      // If the login is successful, redirect to the dashboard
+      alert('Login successful!');
+  var userName = 'John Doe'; // Replace with the actual user's name retrieved from the server
+  localStorage.setItem('userName', userName); // Save the user's name to localStorage
+  window.location.href = 'dashboard.php'; // Redirect to the dashboard page
+}
+
+    function signUp() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email-signup').value;
+      var password = document.getElementById('password-signup').value;
+      var userID = '456'; // Replace with the actual user's ID retrieved from the server
+      window.location.href = 'dashboard.html?id=' + userID;
+
+      // Perform basic client-side validation
+      if (name === '' || email === '' || password === '') {
+        alert('Please fill in all the fields.');
+        return;
+      }
+
+            // Validate name: Only alphabets are allowed
+            var nameRegex = /^[A-Za-z]+$/;
+            if (!name.match(nameRegex)) {
+              alert('Name should contain only alphabets.');
+              return;
+            }
+      
+            // Validate password: Minimum 8 characters with at least one number
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!password.match(passwordRegex)) {
+              alert('Password should be minimum 8 characters long and contain at least one number.');
+              return;
+            }
+
+            
+      // Validate email: Restrict to specific domains
+      var emailRegex = /@(gmail|yahoo|hotmail)\.com$/;
+      if (!email.match(emailRegex)) {
+        alert('Please enter a valid email address ending with @gmail.com, @yahoo.com, or @hotmail.com.');
+        return;
+      }
+      // Simulate server-side sign-up process
+      // ... Your server-side code for sign-up process goes here ...
+      // You should save the user's details to the database and send a verification email to the provided email address
+
+      alert('Sign-up successful! Please check your email for verification.');
+
+       // Save the user's name to localStorage
+  localStorage.setItem('userName', name);
+
+      // Clear the sign-up form fields
+      document.getElementById('name').value = '';
+      document.getElementById('email-signup').value = '';
+      document.getElementById('password-signup').value = '';
+      showLogin(); // Switch back to the login form after sign-up
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+<div class="form-container" id="login">
+  <h2>Login</h2>
+  <form action="login.php" method="POST">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    
+    <button type="submit">Login</button>
+    <a href="forgot-password.php">Forgot Password?</a>
+    <p>New User? <a href="#" onclick="showSignUp()">Sign-up</a></p>
+  </form>
+</div>
+    <div class="form-container" id="signup" style="display: none;">
+      <h2>Sign Up</h2>
+      <form action="signup.php" method="POST">
+        <input type="text" name="name" placeholder="Name" required pattern="^[A-Za-z]+$" title="Name should contain only alphabets.">
+        <input type="email" name="email" id="email-signup" placeholder="Email" required pattern="^(?=.*@(gmail|yahoo|hotmail|outlook)\.com$).*$" title="Enter a valid email address ending with @gmail.com, @yahoo.com, or @hotmail.com">
+                 <!-- Password input-->
+                 <div class="form-group">
+                  <label class="col-md-12 control-label" for="passwordinput">
+                      Password
+                  </label>
+                  <div class="col-md-12">
+                      <input id="password" class="form-control input-md" name="password" type="password"
+                          placeholder="Enter your password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$">
+                      <span class="show-pass" onclick="toggle()">
+                          <i class="far fa-eye" onclick="myFunction(this)"></i>
+                      </span>
+                      <div id="popover-password">
+                          <p><span id="result"></span></p>
+                          <div class="progress">
+                              <div id="password-strength" class="progress-bar" role="progressbar" aria-valuenow="40"
+                                  aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                          </div>
+                          <ul class="list-unstyled">
+                              <li class="">
+                                  <span class="low-upper-case">
+                                      <i class="fas fa-circle" aria-hidden="true"></i>
+                                      &nbsp;Lowercase &amp; Uppercase
+                                  </span>
+                              </li>
+                              <li class="">
+                                  <span class="one-number">
+                                      <i class="fas fa-circle" aria-hidden="true"></i>
+                                      &nbsp;Number (0-9)
+                                  </span>
+                              </li>
+                              <li class="">
+                                  <span class="one-special-char">
+                                      <i class="fas fa-circle" aria-hidden="true"></i>
+                                      &nbsp;Special Character (!@#$%^&*)
+                                  </span>
+                              </li>
+                              <li class="">
+                                  <span class="eight-character">
+                                      <i class="fas fa-circle" aria-hidden="true"></i>
+                                      &nbsp;Atleast 8 Character
+                                  </span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+      </form>
+    </div>
+  </div>
+  <script>
+    let state = false;
+        let password = document.getElementById("password");
+        let passwordStrength = document.getElementById("password-strength");
+        let lowUpperCase = document.querySelector(".low-upper-case i");
+        let number = document.querySelector(".one-number i");
+        let specialChar = document.querySelector(".one-special-char i");
+        let eightChar = document.querySelector(".eight-character i");
+
+        password.addEventListener("keyup", function () {
+            let pass = document.getElementById("password").value;
+            checkStrength(pass);
+        });
+
+        function toggle() {
+            if (state) {
+                document.getElementById("password").setAttribute("type", "password");
+                state = false;
+            } else {
+                document.getElementById("password").setAttribute("type", "text")
+                state = true;
+            }
+        }
+
+        function myFunction(show) {
+            show.classList.toggle("fa-eye-slash");
+        }
+
+        function checkStrength(password) {
+            let strength = 0;
+
+            //If password contains both lower and uppercase characters
+            if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+                strength += 1;
+                lowUpperCase.classList.remove('fa-circle');
+                lowUpperCase.classList.add('fa-check');
+            } else {
+                lowUpperCase.classList.add('fa-circle');
+                lowUpperCase.classList.remove('fa-check');
+            }
+            //If it has numbers and characters
+            if (password.match(/([0-9])/)) {
+                strength += 1;
+                number.classList.remove('fa-circle');
+                number.classList.add('fa-check');
+            } else {
+                number.classList.add('fa-circle');
+                number.classList.remove('fa-check');
+                       }
+            //If it has one special character
+            if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+                strength += 1;
+                specialChar.classList.remove('fa-circle');
+                specialChar.classList.add('fa-check');
+            } else {
+                specialChar.classList.add('fa-circle');
+                specialChar.classList.remove('fa-check');
+            }
+            //If password is greater than 7
+            if (password.length > 7) {
+                strength += 1;
+                eightChar.classList.remove('fa-circle');
+                eightChar.classList.add('fa-check');
+            } else {
+                eightChar.classList.add('fa-circle');
+                eightChar.classList.remove('fa-check');
+            }
+
+            // If value is less than 2
+            if (strength < 2) {
+                passwordStrength.classList.remove('progress-bar-warning');
+                passwordStrength.classList.remove('progress-bar-success');
+                passwordStrength.classList.add('progress-bar-danger');
+                passwordStrength.style = 'width: 10%';
+            } else if (strength == 3) {
+                passwordStrength.classList.remove('progress-bar-success');
+                passwordStrength.classList.remove('progress-bar-danger');
+                passwordStrength.classList.add('progress-bar-warning');
+                passwordStrength.style = 'width: 60%';
+            } else if (strength == 4) {
+                passwordStrength.classList.remove('progress-bar-warning');
+                passwordStrength.classList.remove('progress-bar-danger');
+                passwordStrength.classList.add('progress-bar-success');
+                passwordStrength.style = 'width: 100%';
+            }
+        }
+    // Automatically show the sign-up block for new users
+    showSignUp();
+
+  // Update the user's name in the login form after redirection to the dashboard
+  var userName = localStorage.getItem('userName');
+  if (userName) {
+    document.getElementById('userName').textContent = 'Welcome, ' + userName;
+  }
+  </script>
+</body>
+</html>

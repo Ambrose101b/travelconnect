@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Train Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      background-image: url('railway.jpg'); /* Replace with your railway background image URL */
+      background-size: absolute;
+      background-position: center;
+    }
+
+    .train {
+      position: absolute;
+      top: 40%;
+      left: -200px;
+      transform: translateY(-50%);
+      width: 400px; /* Increase the width to make the train icon bigger */
+      height: 200px; /* Increase the height to make the train icon bigger */
+      background-image: url('trainicon.png'); /* Replace with your train icon image URL */
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: trainAnimation 7s linear infinite;
+    }
+
+    @keyframes trainAnimation {
+      0% {
+        left: -200px;
+      }
+      100% {
+        left: calc(100% + 200px);
+      }
+    }
+
+    @keyframes loadingAnimation {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="train"></div>
+</body>
+</html>

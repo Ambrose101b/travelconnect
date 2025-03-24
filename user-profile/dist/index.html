@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - User Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="phone-wrapper">
+	<div class="background-image-wrapper">
+	</div>
+
+	<div class="details-wrapper">
+		<div class="names-wrapper">
+			<div class="name-label">
+				<?php
+				// Database connection
+				$conn = new mysqli('localhost', 'root', '', 'travelconnect');
+				
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				}
+				
+				// Fetch name and email from users table
+				$sql = "SELECT name, email FROM users";
+				$result = $conn->query($sql);
+				
+				if ($result->num_rows > 0) {
+				    // Display the first row of results
+				    $row = $result->fetch_assoc();
+				    $name = $row["name"];
+				    $email = $row["email"];
+				    echo $name;
+				}
+				
+				$conn->close();
+				?>
+			</div>
+			<div class="person-details">
+				<div class="description">
+					"Travel. Explore. Live: Unleashing the Wanderlust within."
+				</div>
+				<div class="phone">
+					<?php echo $email; ?>
+				</div>
+				<div class="email">
+					<?php echo $email; ?>
+				</div>
+			</div>
+		</div>
+		
+		<div class="stats-wrapper">
+			<div class="stats">
+				<div class="stats-count">
+					794	
+				</div>
+				<div class="label">
+					Following
+				</div>
+			</div>
+			
+			<div class="stats">
+				<div class="stats-count">
+					450	
+				</div>
+				<div class="label">
+					Comments
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer-note">
+	<div class='ajduke'>
+		Made with <i class="fa fa-heart" aria-hidden="true"></i> in India by <a href="https://codepen.io/ajduke/">ajduke</a>
+	</div>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script  src="./script.js"></script>
+</body>
+</html>

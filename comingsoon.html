@@ -1,0 +1,193 @@
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Roboto+Mono:300,400');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: linear-gradient(rgba(34, 41, 65, 0.45), rgba(46, 55, 86, 0.45)), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1387378/bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-head {
+  header {
+    height: 75px;
+  }
+  .navbar-item img {
+    height: 75px;
+    max-height: none;
+  }
+  .is-primary {
+    border-color: white !important;
+    color: white !important;
+  }
+  .is-primary:hover {
+    background: rgba(0, 0, 0, 0) !important;
+    border-color: white !important;
+    color: white !important;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.hero-body .title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300 !important;
+  font-size: 4rem !important;
+  letter-spacing: 15px;
+  color: #ffffff !important;
+}
+
+.hero-body .subtitle .countdown {
+  color: #ffffff;
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-top: 15px;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+}
+
+.hero-foot {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-foot ul li {
+  display: inline;
+  padding: 25px;
+}
+
+.hero-foot a {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .7rem;
+}
+
+/* -------------------- */
+/* -- Animations CSS -- */
+/* -------------------- */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    opacity: 1\9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+
+.fade.fadeOne {
+  animation-delay: 1.7s;
+}
+
+.fade.fadeTwo {
+  animation-delay: 2.2s;
+}
+
+.fade.fadeThree {
+  animation-delay: 4.2s;
+}
+
+</style>
+<script>
+// ♫ ♫ IT'S THE FINAL COUNTDOWN ♫ ♫ //
+
+var endingDate = new Date("Jul 04, 2024 13:37:00").getTime();
+var x = setInterval(function() {
+  var current = new Date().getTime();
+  var remainingTime = endingDate - current;
+
+  var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  var hours = Math.floor(
+    (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days +
+    "<span>D</span> " +
+    hours +
+    "<span>H</span> " +
+    minutes +
+    "<span>M</span> " +
+    seconds +
+    "<span>S</span> ";
+}, 1000);
+</script>
+<body>
+  <a class="github-fork-ribbon" href="https://github.com/emkelley/EK-Bulma-Templates" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
+  <section class="hero is-transparent is-fullheight ">
+    <div class="hero-head">
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1387378/logo.svg" width="250px" alt="Logo">
+            </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <span class="navbar-item">
+                <a class="button is-primary is-outlined" href="#">
+                  <span class="icon">
+                    <i class="fa fa-twitter"></i>
+                  </span> &nbsp;&nbsp;Follow Us
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered content">
+        <h1 class="title">
+          <span class="fade fadeOne">COMING</span>
+          <span class="fade fadeTwo">SOON</span>
+        </h1>
+        <h2 class="subtitle">
+          <p id="countdown" class="countdown fade fadeThree"></p>
+        </h2>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="columns has-text-centered">
+        <div class="column">
+          <div class="container">
+            <ul>
+              <li>
+                <a href="#">Twitter</a>
+              </li>
+              <li>
+                <a href="#">Facebook</a>
+              </li>
+              <li>
+                <a href="#">YouTube</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

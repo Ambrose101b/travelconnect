@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Connect Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2e6ff; /* Light purple background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 30px auto;
+            border: 2px solid grey;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .chat-header {
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-content {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .user-bubble, .bot-bubble {
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+
+        .user-bubble {
+            background-color: #f2f2f2; /* Light grey for user messages */
+            align-self: flex-end;
+        }
+
+        .bot-bubble {
+            background-color: #b3e0ff; /* Light blue for bot messages */
+            align-self: flex-start;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #send-button {
+            padding: 8px 20px;
+            margin-left: 10px;
+            color: white;
+            background-color: #007bff; /* Blue send button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Travel Connect Chat</h2>
+        </div>
+        <div class="chat-content" id="chat-content">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button type="button" id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for the chatbot
+        const chatContent = document.getElementById('chat-content');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', function() {
+            const userMessage = userInput.value.trim();
+            if (userMessage !== '') {
+                addMessage(userMessage, 'user');
+                getBotResponse(userMessage);
+                userInput.value = '';
+            }
+        });
+
+        function addMessage(message, sender) {
+            const bubble = document.createElement('div');
+            bubble.textContent = message;
+            bubble.className = sender + '-bubble';
+            chatContent.appendChild(bubble);
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            // Pre-determined questions and answers
+            const questions = [
+                'What are the popular tourist attractions?',
+                'Which hotels are available near the city center?',
+                'What is the best time to visit?',
+                'How can I book tickets for local transportation?',
+                'Where can I find local cuisine restaurants?',
+                'What are the top-rated beaches?',
+                'How can I plan a day trip from the city?',
+                'What activities are available for kids?',
+                'Tell me about the local culture and traditions.',
+                'Are there any special events or festivals happening soon?',
+                'What are the best shopping spots?',
+                'How can I get from the airport to the city center?',
+                'What are the must-try dishes in the region?',
+                'Tell me about the weather forecast for the next week.',
+                'Are there any adventure sports available?',
+                'How can I hire a tour guide?',
+                'What are the famous historical landmarks?',
+                'Tell me about the nightlife in the city.',
+                'Are there any discounts or offers on travel packages?',
+                'How can I reach the famous national park?'
+            ];
+
+            // Pre-determined answers
+            const answers = [
+                'The popular tourist attractions include [Attraction 1], [Attraction 2], and [Attraction 3].',
+                'You can find hotels near the city center such as [Hotel 1], [Hotel 2], and [Hotel 3].',
+                'The best time to visit is during [Season/Time].',
+                'You can book tickets for local transportation at [Ticket Counter/Website].',
+                'You can find local cuisine restaurants in [Area/Street].',
+                'The top-rated beaches are [Beach 1], [Beach 2], and [Beach 3].',
+                'You can plan a day trip to [Destination] from the city.',
+                'For kids, there are activities like [Activity 1], [Activity 2], and [Activity 3].',
+                'The local culture and traditions are [Description].',
+                'There are special events and festivals happening on [Date/Event].',
+                'The best shopping spots are [Shop 1], [Shop 2], and [Shop 3].',
+                'You can get from the airport to the city center by [Transportation Mode].',
+                'The must-try dishes in the region are [Dish 1], [Dish 2], and [Dish 3].',
+                'The weather forecast for the next week predicts [Weather Forecast].',
+                'There are adventure sports available such as [Adventure 1] and [Adventure 2].',
+                'You can hire a tour guide through [Tour Guide Service].',
+                'The famous historical landmarks include [Landmark 1], [Landmark 2], and [Landmark 3].',
+                'The nightlife in the city offers [Nightlife Activities].',
+                'There are discounts and offers on travel packages at [Offer Website].',
+                'To reach the famous national park, you can [Transportation Method].'
+            ];
+
+            // Generate a random index to pick a question and its corresponding answer
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            const question = questions[randomIndex];
+            const answer = answers[randomIndex];
+
+            addMessage(question, 'bot');
+            setTimeout(() => {
+                addMessage(answer, 'bot');
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Successful</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #6350C4;
+      animation: backgroundAnimation 7s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background-color: #6350C4;
+      }
+      50% {
+        background-color: green;
+      }
+      100% {
+        background-color: #6350C4;
+      }
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 100px;
+      color: white;
+      animation: iconAnimation 7s infinite;
+    }
+
+    @keyframes iconAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 24px;
+      color: white;
+      animation: messageAnimation 5s infinite;
+    }
+
+    @keyframes messageAnimation {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="message">
+      <span>Payment Successful!</span>
+    </div>
+  </div>
+</body>
+</html>

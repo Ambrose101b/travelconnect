@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6350C4;
+    }
+
+    .notification {
+      background-color: green;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      animation: colorChange 2s ease-in-out;
+    }
+
+    .tick-animation {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      background-image: url("https://cdn.iconscout.com/icon/free/png-256/check-189-475040.png"); /* Replace with your tick icon image URL */
+      background-size: cover;
+      animation: tickScale 0.5s ease-in-out 2s forwards;
+    }
+
+    @keyframes colorChange {
+      0% {
+        background-color: green;
+      }
+      100% {
+        background-color: #6350C4;
+      }
+    }
+
+    @keyframes tickScale {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Logout</h1>
+    <div class="notification">
+      Logging out
+      <span class="tick-animation"></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?php
+// Assuming you have a database connection established
+// Replace the database credentials with your actual values
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database";
+
+// Retrieve the user's ID or username from the request, you can modify this based on your needs
+$userID = $_GET['id']; // Assuming you are passing the user's ID in the query string parameter 'id'
+
+// Create a connection to the database
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check if the connection was successful
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare and execute the SQL query to retrieve the user's details
+$stmt = $conn->prepare("SELECT username, email, full_name FROM users WHERE id = ?");
+$stmt->bind_param("i", $userID); // Assuming the user ID is an integer
+$stmt->execute();
+$stmt->bind_result($username, $email, $fullName);
+
+// Fetch the result
+$stmt->fetch();
+
+// Close the statement and database connection
+$stmt->close();
+$conn->close();
+?>
+
+<!-- HTML code for the modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>User Profile</h2>
+    <div>
+      <p><strong>Username:</strong> <?php echo $username; ?></p>
+      <p><strong>Email:</strong> <?php echo $email; ?></p>
+      <p><strong>Full Name:</strong> <?php echo $fullName; ?></p>
+    </div>
+  </div>
+</div>

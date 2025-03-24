@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* CSS code goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?cs=srgb&dl=pexels-oleksandr-pidvalnyi-3278215.jpg&fm=jpg); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+      border-radius: 10px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #6350C4; /* Change the color value to your desired color */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 42%; /* Increase the margin-right to add more space */
+    }
+
+    .logo img {
+      height: 120px; /* Increase the height to adjust the logo size */
+      margin-right: 20px;
+    }
+
+    .logo h1 {
+      font-size: 36px; /* Increase the font size for "Travel Connect" text */
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav ul li a.active {
+      color: blue;
+    }
+
+    nav ul li a::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: blue;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul li a.active::after {
+      transform: scaleX(1);
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+    }
+
+    .start-booking-button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .start-booking-button:hover {
+      background-color: #6350C4;
+    }
+
+    .account-button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .account-button:hover {
+      background-color: #6350C4;
+    }
+
+    .help-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .help-text {
+      font-size: 18px;
+      color: #888;
+    }
+
+    .help-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .help-input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .help-button {
+      padding: 5px 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .help-button:hover {
+      background-color: #6350C4;
+    }
+
+    .circular-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .contact-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .contact-label i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+
+    function sendHelpRequest() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      // Here, you can implement the code to send the help request using AJAX or any other method
+
+      // Reset the form fields
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+
+      // Show a confirmation message or perform any other actions after sending the request
+      alert("Help request sent!");
+    }
+  </script>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="http://localhost/phpscript/WhatsApp_Image_2023-05-22_at_00.27.58__1_-removebg-preview.png" alt="Travel Connect Logo">
+        <h1>Travel Connect</h1>
+      </div>
+    </header>
+    <nav>
+      <ul>
+         <li><a href="http://localhost/phpscript/updated_dashboard.html">Home</a></li>
+         <li><a href="http://localhost/phpscript/pen-export-MWzpgQv/dist/explore.html">Explore</a></li>
+        <li><a href="http://localhost/phpscript/myticket.html">My Ticket</a></li>
+        <li><a href="http://localhost/phpscript/offers.html">Offers</a></li>
+        <li><a href="http://localhost/phpscript/help.html" class="active">Help</a></li>
+        <li><a href='http://localhost/phpscript/navigation-pagedesign-lesson/dist/index.html?userid=$id'>About Us</a></li>
+      </ul>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="help-container">
+        <h2>Help - Contact Details</h2>
+        <div class="circular-image">
+          <img src="http://localhost/phpscript/helpbot.gif" alt="help bot" class="circular-image">
+        </div>
+
+        <p class="contact-label"><i class="fas fa-envelope"></i><b>Email:</b> help@travelconnect.com</p>
+        <p class="contact-label"><i class="fas fa-phone"></i><b>Phone:</b> +1 123-456-7890</p>
+        <p class="contact-label"><i class="fab fa-telegram"></i><b>Telegram:</b> @travelconnect</p>
+        <p class="contact-label"><i class="fab fa-instagram"></i><b>Instagram:</b> <a href="https://www.instagram.com/travelconnect">travelconnect</a></p>
+
+        <div class="help-form">
+          <input type="text" id="name" placeholder="Your Name" class="help-input">
+          <input type="email" id="email" placeholder="Your Email" class="help-input">
+          <input type="text" id="message" placeholder="How can we help you?" class="help-input" style="flex-grow: 2;">
+          <button class="help-button" onclick="sendHelpRequest()">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <!-- Footer content goes here -->
+    </footer>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 01. Flight - Tailwind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+<!-- Add these links to include the necessary libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script>
+  $(document).ready(function() {
+    // Initialize the select2 dropdowns
+    $('#fromDropdown').select2();
+    $('#toDropdown').select2();
+
+    // Initialize the datepicker for Depart
+    $('#datepickerDepart').datepicker({
+      dateFormat: 'yyyy-mm-dd' // Adjust the date format as needed
+    });
+
+    // Initialize the datepicker for Return
+    $('#datepickerReturn').datepicker({
+      dateFormat: 'yyyy-mm-dd' // Adjust the date format as needed
+    });
+  });
+
+  $(document).ready(function () {
+    $('#datepickerDepart').datepicker({
+        dateFormat: 'yy-mm-dd',
+        minDate: 0,
+        onSelect: function (date) {
+            if (new Date(date) < new Date()) {
+                alert("Please select a valid date.");
+                // Clear the input or take other appropriate action
+            }
+        }
+    });
+
+    $('#datepickerReturn').datepicker({
+        dateFormat: 'yy-mm-dd',
+        minDate: 0,
+        onSelect: function (date) {
+            if (new Date(date) < new Date()) {
+                alert("Please select a valid date.");
+                // Clear the input or take other appropriate action
+            }
+        }
+    });
+});
+
+
+function checkSourceDestination() {
+  var source = document.getElementById("fromDropdown").value;
+  var destination = document.getElementById("toDropdown").value;
+  var destinationError = document.getElementById("destinationError");
+
+  if (source === destination) {
+      // Source and destination are the same
+      destinationError.classList.remove("hidden");
+  } else {
+      // Source and destination are different, hide the error
+      destinationError.classList.add("hidden");
+      // Continue with form submission
+  }
+}
+
+function closereturn()
+{
+  var inputElement = document.getElementById("return");
+document.getElementById("return").style.visibility="hidden";
+if (inputElement.hasAttribute("required")) {
+  // If it's required, remove the required attribute
+  inputElement.removeAttribute("required");
+} else {
+  // If it's not required, add the required attribute
+  inputElement.setAttribute("required", "required");
+}
+}
+
+function openreturn()
+{
+document.getElementById("return").style.visibility="visible";
+}
+</script>
+
+
+</head>
+<body>
+  <div id="destinationError" class="hidden text-red-600 mt-2">Source and destination cannot be the same.</div>
+    <div id="datePopup" class="hidden absolute top-0 left-0 w-full h-full bg-white bg-opacity-90 flex items-center justify-center z-50">
+      <div class="p-4 rounded-lg border border-gray-300 bg-gray-100 text-gray-800">
+          You can only select today or future dates.
+      </div>
+  </div>
+<!-- partial:index.partial.html -->
+<div class="font-sans flex bg-sky-100 min-h-full p-3">
+  <form class="m-auto bg-white drop-shadow-lg rounded-lg overflow-hidden w-96 accent-gray-800" action="search-results.php" method="post">
+    <div class="p-6">
+      <div class="flex">
+        <div>
+          <input class="cursor-pointer text-gray-800" id="1" type="radio" name="type" value="1" onchange="openreturn()">
+          <label class="cursor-pointer text-xs font-bold" for="1">Round Trip</label>
+        </div>
+        <div class="ml-8">
+          <input class="cursor-pointer text-gray-800" id="2" type="radio" name="type" value="2" onchange="closereturn()">
+          <label class="cursor-pointer text-xs font-bold" for="2">One Way</label>
+        </div>
+      </div>
+      <div class="mt-4 relative">
+        <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+          <i class="text-sm text-gray-400 fa-regular fa-location-dot"></i>
+        </div>
+        <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" name="from" id="fromDropdown" required>
+          <!-- Add your dropdown options here with values -->
+          <option value="IND">India</option>
+          <option value="USA">United States</option>
+          <option value="CAN">Canada</option>
+          <option value="UK">United Kingdom</option>
+          <option value="AUS">Australia</option>
+          <option value="GER">Germany</option>
+          <option value="FRA">France</option>
+          <option value="JPN">Japan</option>
+          <option value="CHN">China</option>
+          <option value="BRA">Brazil</option>
+          <option value="RUS">Russia</option>
+          <option value="SA">South Africa</option>
+          <option value="MEX">Mexico</option>
+          <option value="ITA">Italy</option>
+          <option value="ESP">Spain</option>
+          <option value="ARG">Argentina</option>
+          <option value="NED">Netherlands</option>
+          <option value="SWE">Sweden</option>
+          <option value="NZ">New Zealand</option>
+          <option value="SWI">Switzerland</option>
+          
+          <!-- Add more country options -->
+        </select>
+      </div>
+      <div class="mt-4 relative">
+        <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+          <i class="text-sm text-gray-400 fa-regular fa-location-dot"></i>
+        </div>
+        <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" name="to" id="toDropdown" required>
+          <!-- Add your dropdown options here with values -->
+          
+          <option value="IND">India</option>
+          <option value="USA">United States</option>
+          <option value="CAN">Canada</option>
+          <option value="UK">United Kingdom</option>
+          <option value="AUS">Australia</option>
+          <option value="GER">Germany</option>
+          <option value="FRA">France</option>
+          <option value="JPN">Japan</option>
+          <option value="CHN">China</option>
+          <option value="BRA">Brazil</option>
+          <option value="RUS">Russia</option>
+          <option value="SA">South Africa</option>
+          <option value="MEX">Mexico</option>
+          <option value="ITA">Italy</option>
+          <option value="ESP">Spain</option>
+          <option value="ARG">Argentina</option>
+          <option value="NED">Netherlands</option>
+          <option value="SWE">Sweden</option>
+          <option value="NZ">New Zealand</option>
+          <option value="SWI">Switzerland</option>
+          
+          <!-- Add more country options -->
+        </select>
+      </div>
+      <div class="flex max-xs:flex-col gap-4 mt-4">
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-calendar"></i>
+          </div>
+          <fieldset>
+          <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Depart" type="date" name="depart" required>
+        </div>
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-calendar"></i>
+          </div>
+          <!-- Date input with date picker for Return -->
+          <input class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" placeholder="Return" id="return" type="date" name="return" required>
+        </div>
+      </div>
+    </fieldset>
+      <div class="flex max-xs:flex-col gap-4 mt-4">
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-user"></i>
+          </div>
+          <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" name="passengers" required>
+            <option>1 Passenger</option>
+            <option>2 Passengers</option>
+            <option>3 Passengers</option>
+          </select>
+        </div>
+        <div class="flex-1 relative">
+          <div class="absolute top-0 left-0 w-8 h-8 flex justify-center items-center">
+            <i class="text-sm text-gray-400 fa-regular fa-seat-airline"></i>
+          </div>
+          <select class="w-full bg-gray-100 text-xs font-bold border-none py-2 pl-8 pr-4 rounded placeholder:text-gray-800" name="class" required>
+            <option>Economy class</option>
+            <option>Business Class</option>
+            <option>First class</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="bg-gray-800 uppercase py-4 w-full text-white text-xs tracking-widest" onclick="checkSourceDestination(event)" type="submit">Search Flights</button>
+    </div>
+  </form>
+</div>
+<!-- partial -->
+  <script src='https://cdn.tailwindcss.com?plugins=forms'></script>
+<script src='https://kit.fontawesome.com/a24879a822.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

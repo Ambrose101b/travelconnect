@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    /* CSS code goes here */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?cs=srgb&dl=pexels-oleksandr-pidvalnyi-3278215.jpg&fm=jpg); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+    }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Add background color with transparency */
+  border-radius: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #6350C4; /* Change the color value to your desired color */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 42%; /* Increase the margin-right to add more space */
+}
+
+.logo img {
+  height: 120px; /* Increase the height to adjust the logo size */
+  margin-right: 20px;
+}
+
+.logo h1 {
+  font-size: 36px; /* Increase the font size for "Travel Connect" text */
+  font-weight: bold;
+}
+
+nav {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+
+nav ul li a.active {
+  color: blue;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a.active::after {
+  transform: scaleX(1);
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+.start-booking-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.start-booking-button:hover {
+  background-color: #6350C4;
+}
+
+.account-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.account-button:hover {
+  background-color: #6350C4;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remove the margin-right for the last list item */
+}
+  </style>
+</head>
+<body>
+  <script>
+    function redirectToLogin() {
+      // Send an AJAX request to destroy the session
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "logout.php", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Session is destroyed, redirect to the login or sign-up page
+          window.location.href = "index.html"; // Replace with the correct URL
+        }
+      };
+      xhr.send();
+    }
+  </script>
+  
+  <div class="container">
+    <header>
+        <div class="logo"><a href="http://localhost/phpscript/adminlogin.php">
+        <img src="http://localhost/phpscript/WhatsApp_Image_2023-05-22_at_00.27.58__1_-removebg-preview.png" alt="Travel Connect Logo"></a>  <h1>Travel Connect</h1>
+      </div>
+      <div class="account" id="account">
+        <button class="account-button" onclick="redirectToLogin()">Sign Up/Login</button>
+      </div>      
+    </header>
+    <nav>
+      <ul>
+        <li><a href="http://localhost/phpscript/dashboard.html" class="active">Home</a></li>
+        <li><a href=# onclick="alert('Login/Sign-up')" >Explore</a></li>
+        <li><a href=# onclick="alert('Login/Sign-up')">My Ticket</a></li>
+        <li><a href=# onclick="alert('Login/Sign-up')">Offers</a></li>
+        <li><a href=# onclick="alert('Login/Sign-up')">Help</a></li>
+        <li><a href="#" onclick="alert('Login/Sign-up')">About Us</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Overview</h2>
+      <p>Welcome to Travel Connect, the ultimate destination for all your travel needs. Whether you're looking to book a flight, reserve a train ticket, or manage your travel itineraries, we've got you covered.</p>
+      <p>Our intuitive and user-friendly platform allows you to explore various flight and train options, compare fares, select your preferred seats, and make hassle-free bookings. With Travel Connect, you can experience seamless travel planning and enjoy a stress-free journey.</p>
+      <p>From discovering new destinations to managing your travel schedules, Travel Connect is your trusted companion every step of the way. Start exploring and embark on unforgettable travel adventures with us!</p>
+    </section>
+    <section>
+       <h3>Explore, Compare, and Book</h3>
+  <p>With Travel Connect, you have the power to explore countless destinations, compare fares, and book your flights and train tickets with ease. Our user-friendly platform allows you to search for the best deals, customize your travel preferences, and make secure online bookings in just a few clicks. Whether you're planning a family vacation, a business trip, or a spontaneous getaway, we've got you covered.</p>
+  
+  <h3>Manage Your Travel Itineraries</h3>
+  <p>Travel Connect offers a comprehensive itinerary management system to help you stay organized throughout your journey. Easily view and manage your travel bookings, track flight statuses, access boarding passes, and receive timely notifications about any changes or updates. We understand that travel plans can sometimes change, and our platform ensures that you're always informed and prepared.</p>
+  
+  <h3>Personalized Travel Experiences</h3>
+  <p>We believe that every traveler is unique, and we strive to provide personalized experiences tailored to your preferences. Discover our recommendation engine that suggests popular destinations, activities, and attractions based on your interests and past travel history. Let us inspire you to embark on new adventures and create unforgettable memories.</p>
+  
+  <h3>24/7 Customer Support</h3>
+  <p>Your satisfaction is our top priority, and our dedicated customer support team is available 24/7 to assist you with any queries or concerns. Whether you need assistance with booking modifications, travel advice, or resolving any issues during your trip, we're here to provide prompt and reliable support. Your travel experience should be stress-free, and we're committed to making that a reality.</p>
+  
+  <h3>Join the Travel Connect Community</h3>
+  <p>Become part of our vibrant travel community and connect with fellow travelers from around the world. Share your travel stories, tips, and recommendations. Get inspired by others' experiences and broaden your horizons. Travel Connect is not just a booking platform; it's a place where travel enthusiasts come together to celebrate the joy of exploration.</p>
+  
+  <p>At Travel Connect, we're passionate about transforming your travel dreams into reality. Start your journey with us today and experience the world like never before.</p>
+<br/>
+</section>
+<a href="http://localhost/phpscript/index.html" class="start-booking-button" onclick="redirectToLogin()">Start Booking</a>
+  </div>
+</body>
+</html>
