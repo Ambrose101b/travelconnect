@@ -49,7 +49,7 @@ Database: MySQL
 Version Control: Git, GitHub
 Xampp Server
 
-License
+License:-
 This project is open-source and available under the MIT License.
 
 ## This are some Outputs of the Project:
