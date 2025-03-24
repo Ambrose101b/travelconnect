@@ -11,9 +11,13 @@
 * MySQL
 ## This are some Outputs of the Project:
 ![Image](https://github.com/user-attachments/assets/8ce90421-84b1-4007-84ba-0af357ab64d1)
-![image](https://user-images.githubusercontent.com/60505090/130501867-11b7e94b-208e-49af-b0da-4c18e7800190.png)
-![image](https://user-images.githubusercontent.com/60505090/130501947-6a7a9414-ccc0-4a00-8f9f-af4cf69bc615.png)
-![image](https://user-images.githubusercontent.com/60505090/130502025-c43a6356-beeb-42aa-b84c-697d03df672d.png)
-![image](https://user-images.githubusercontent.com/60505090/130502063-573a1fab-f60e-4016-9645-8cf22e1c467a.png)
-![image](https://user-images.githubusercontent.com/60505090/130502106-08e3d1a2-06ca-478d-8809-9c71dbadc3ce.png)
+![Image](https://github.com/user-attachments/assets/3ee348c2-a2cc-469a-a715-2995863f5a99)
+![Image](https://github.com/user-attachments/assets/b7687c65-5bac-4e5b-ba50-9b16bd709477)
+![Image](https://github.com/user-attachments/assets/5e144840-ad6b-46a0-bdaf-f1fad5a0c4f1)
+![Image](https://github.com/user-attachments/assets/1f486cb1-ada3-4a92-8fef-51216f33bd2d)
+![Image](https://github.com/user-attachments/assets/41bff652-4415-4a42-a495-f4ac6025e765)
+![Image](https://github.com/user-attachments/assets/647d147f-cf3c-497b-ac34-bc652b144161)
+![Image](https://github.com/user-attachments/assets/69bf47c1-14f8-4e86-acda-43d5c51e633b)
+![Image](https://github.com/user-attachments/assets/9607fb53-6594-4b5c-95f5-e8466a87f627)
+
 
